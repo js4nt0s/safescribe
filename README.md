@@ -22,33 +22,32 @@ To get started with Safescribe, simply install it and use the command-line inter
 
 ## IV. Installation
 
-    pip install https://github.com/js4nt0s/safescribe
+    pip install git+https://github.com/js4nt0s/safescribe.git
+
 
 ## V. Usage
 
 To start using it simply type in:
 
-
-    safescribe path/file.pdf
-
+    python -m safescribe path/file.pdf
 
 For a custom output directory just add the -o tag and the desired output folder
 
 
-    safescribe path/file.pdf -o output_path/file.pdf
+    python -m safescribe path/file.pdf -o output_path/file.pdf
 
 
 For a log of all urls (or actions) found add the -l tag
 
-    safescribe path/file.pdf -l
+    python -m safescribe path/file.pdf -l
 
 To include actions you can either use the -A for all actions or -a for specific actions
 
-    safescribe path/file.pdf -A //all actions
+    python -m safescribe path/file.pdf -A //all actions
 
 Remove only GoToR URI SubmitFormat Javascript subtypes
 
-    safescribe path/file.pdf -a GoToR URI SubmitFormat Javascript 
+    python -m safescribe path/file.pdf -a GoToR URI SubmitFormat Javascript 
 
 Here is a complete list of all action subtypes provided by Adobe on the PDF 1.7 Refference
 
