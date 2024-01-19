@@ -82,6 +82,11 @@ def main():
         action_processed_output = temp_dir_path / f"temp-action-processed-{input_file_name}.pdf"
         final_output = output_dir_path / f"processed-{input_file.name}"
 
+        # Initialize variables
+        page_count = url_count = link_count = action_count = 0
+        removed_links = []
+        removed_actions = []
+
         try:
             
             processor.uncompress_pdf(input_file, uncompress_pdf_output)
