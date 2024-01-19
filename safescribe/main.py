@@ -83,10 +83,10 @@ def main():
         final_output = output_dir_path / f"processed-{input_file.name}"
 
         try:
-            # Step 1: Uncompress
+            
             processor.uncompress_pdf(input_file, uncompress_pdf_output)
 
-            # Step 2: Process file (Link and Actions)
+
             page_count, url_count, link_count, removed_links = processor.remove_links(
                 uncompress_pdf_output, link_processed_output)
 
@@ -106,12 +106,12 @@ def main():
                 page_count, action_count, removed_actions = processor.remove_specific_actions(
                     link_processed_output, action_processed_output, args.actions)
                 
-                # Delete the link-processed file after actions are processed
+                
                 processor.cleanup_temp_files(link_processed_output)
 
                 processed_file_for_compression = action_processed_output
 
-            # Step 3: Compress file
+            
             processor.compress_pdf(processed_file_for_compression, final_output)
             
             processor.cleanup_temp_files(processed_file_for_compression)
@@ -127,10 +127,9 @@ def main():
         traceback.print_exc()
     
     finally:
-        # Step 3.5: Cleanup temporary files
+        
         processor.cleanup_temp_files('temp/*')
 
-    # Step 4: Log Findings
     
     if(args.log):
         logger.start_log_session(log_file_path)
