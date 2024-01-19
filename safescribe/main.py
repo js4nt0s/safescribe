@@ -4,7 +4,7 @@ from rich import print
 from datetime import datetime
 import traceback
 
-from modules import processor, logger
+from .modules import processor, logger
 
 def parse_arguments():
 
