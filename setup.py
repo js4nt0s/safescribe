@@ -4,9 +4,7 @@ setup(
     name='SafeScribe',
     version='1.0.0',
     author='Jorge Santos',
-    author_email='jorgesmrc2023@example.com',
     description='A CLI tool to process PDFs for enhanced security by removing embedded URLs and action items.',
-    long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/js4nt0s/safescribe',
     packages=find_packages(),
@@ -17,7 +15,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'safescribe = main:main',
+            'safescribe=safescribe.main:main',
         ],
     },
     classifiers=[
